@@ -14,25 +14,25 @@ The project includes a template for testing
     </thead>
     <tr>
     <td>
-    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/johnny_depp.jpg">
+    <img width="289" src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/johnny_depp.jpg">
     </td>
     <td>
-    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/jack_sparrow.jpg">
+    <img width="289" src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/jack_sparrow.jpg">
     </td>
     <td>
-    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/result.png">
+    <img  src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/result.png">
     </td>
     </tr>
     <tr>
     <tr>
     <td>
-    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/johnny_depp.jpg">
+    <img width="289" src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/johnny_depp.jpg">
     </td>
     <td>
-    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/photos/carlos.png">
+    <img width="289" src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/photos/carlos.png">
     </td>
     <td>
-    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/result2.png">
+    <img  src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/result2.png">
     </td>
     </tr>
     </tr>
