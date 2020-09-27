@@ -1,37 +1,88 @@
-## Welcome to GitHub Pages
+### Introduction 🚀
+> Rest api service to detect faces, with the ability to detect similarities  in two images.
+#### Example
+The project includes a template for testing
+>![Test Image 4](static/images/example/exampleOne.png) 
 
-You can use the [editor on GitHub](https://github.com/carlosmatameza/teotl/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<table>
+    <thead>
+    <td><b>user_profile_picture</b></td>
+    <td><b>user_webcam_photo</b></td>
+    <td><b>Result</b></td>
+    </thead>
+    <tr>
+    <td>
+    <img width="289" src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/johnny_depp.jpg">
+    </td>
+    <td>
+    <img width="289" src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/jack_sparrow.jpg">
+    </td>
+    <td>
+    <img  src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/result.png">
+    </td>
+    </tr>
+    <tr>
+    <tr>
+    <td>
+    <img width="289" src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/johnny_depp.jpg">
+    </td>
+    <td>
+    <img width="289" src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/photos/carlos.png">
+    </td>
+    <td>
+    <img  src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/result2.png">
+    </td>
+    </tr>
+    </tr>
+</table>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Create with
+* python: version 3.6
+* Flask 1.1.2
+* face-recognition 1.3.0
+## Installation 🔧
 
-### Markdown
+* python3 -m venv ./venv
+* source venv/bin/activate
+* pip3 install -r requirements.txt
+* export FLASK_APP=main.py
+* flask run
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Functions ⚙️
 
-```markdown
-Syntax highlighted code block
+> **/compareFaces** [POST]
+>> compare two images to find facial similarities (with format Base64 JSON)
+>> ### Parameters Request
+>> * user_profile_picture : Base 64 encode string of person
+>> * user_webcam_photo : Base 64 encode string imagen to compare
+>> ### Response
+>> * 'True' : two images container faces similarities
+>> * 'False' : two images not container similarities, or not container faces, or not container a parameter request
+---
+> **/compareFacesPath** [POST]
+>> compare two images to find facial similarities (with format Path request file)
+>> ### Parameters Request
+>> * user_profile_picture : file of person
+>> * user_webcam_photo : file imagen to compare
+>> ### Response
+>> * 'True' : two images container faces similarities
+>> * 'False' : two images not container similarities, or not container faces, or not container a parameter request
+---
+> **/detectFaces** [POST]
+>> analyzes an image to detect faces (with format Path request file)
+>> ### Parameters Request
+>> * profile_picture : file imagen to search faces
+>> ### Response
+>> * 'True' : image container a face
+>> * 'False' : imagen not container a face, or not exist parameter request
+---
+## **Settings**
+These are the two parameters to adjust the image analysis (modify in config.py)
+>TOLERANCE :if value is low,the result will be more strict (default 0.55)
 
-# Header 1
-## Header 2
-### Header 3
+>SIZE_CONVERT :Size to resize the images for better processing (default 128)
+---
+## License 📄
+This project is under the license [LICENSE.md](LICENSE.md).
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/carlosmatameza/teotl/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+---
