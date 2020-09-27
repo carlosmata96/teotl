@@ -2,7 +2,7 @@
 > Rest api service to detect faces, with the ability to detect similarities  in two images.
 #### Example
 The project includes a template for testing
->![Test Image 4](static/images/example/exampleOne.png) 
+>![Test Image 4](https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/exampleOne.png) 
 
 <table>
     <thead>
