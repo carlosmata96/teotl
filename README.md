@@ -3,14 +3,41 @@
 ### Introduction 🚀
 > Rest api service to detect faces, with the ability to detect similarities  in two images.
 #### Example
-
->![Test Image 4](static/images/Johnny_depp/jack_sparrow.jpg) 
->![Test Image 4](static/images/Johnny_depp/johnny_depp.jpg)
-
+The project includes a template for testing
 >![Test Image 4](static/images/example/exampleOne.png) 
 
-#### Result
->![Test Image 4](static/images/example/result.png) 
+<table>
+    <thead>
+    <td><b>user_profile_picture</b></td>
+    <td><b>user_webcam_photo</b></td>
+    <td><b>Result</b></td>
+    </thead>
+    <tr>
+    <td>
+    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/johnny_depp.jpg">
+    </td>
+    <td>
+    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/jack_sparrow.jpg">
+    </td>
+    <td>
+    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/result.png">
+    </td>
+    </tr>
+    <tr>
+    <tr>
+    <td>
+    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/Johnny_depp/johnny_depp.jpg">
+    </td>
+    <td>
+    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/photos/carlos.png">
+    </td>
+    <td>
+    <img src="https://raw.githubusercontent.com/carlosmata96/teotl/master/static/images/example/result2.png">
+    </td>
+    </tr>
+    </tr>
+</table>
+
 ## Create with
 * python: version 3.6
 * Flask 1.1.2
