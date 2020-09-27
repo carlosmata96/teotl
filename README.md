@@ -2,6 +2,15 @@
 ## API for recognition and comparation facial
 ### Introduction 🚀
 > Rest api service to detect faces, with the ability to detect similarities  in two images.
+#### Example
+
+>![Test Image 4](static/images/Johnny_depp/jack_sparrow.jpg) 
+>![Test Image 4](static/images/Johnny_depp/johnny_depp.jpg)
+
+>![Test Image 4](static/images/example/exampleOne.png) 
+
+#### Result
+>![Test Image 4](static/images/example/result.png) 
 ## Create with
 * python: version 3.6
 * Flask 1.1.2
@@ -41,6 +50,12 @@
 >> ### Response
 >> * 'True' : image container a face
 >> * 'False' : imagen not container a face, or not exist parameter request
+---
+## **Settings**
+These are the two parameters to adjust the image analysis (modify in config.py)
+>TOLERANCE :if value is low,the result will be more strict (default 0.55)
+
+>SIZE_CONVERT :Size to resize the images for better processing (default 128)
 ---
 ## License 📄
 This project is under the license [LICENSE.md](LICENSE.md).

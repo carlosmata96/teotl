@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Teotl</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+               aria-selected="true">Compare Images with MultiPart</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="base-tab" data-toggle="tab" href="#base" role="tab" aria-controls="base"
+               aria-selected="false">Compare Images with Base64</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <form action="/compareFacesPath" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fileone">Image</label>
+                    <input type="file" class="form-control-file" name="user_profile_picture" id="fileOne">
+                </div>
+                <div class="form-group">
+                    <label for="filetwo">Image to compare</label>
+                    <input type="file" class="form-control-file" name="user_webcam_photo" id="filetwo">
+                </div>
+                <button class="btn btn-primary" type="submit">Compare</button>
+            </form>
+        </div>
+        <div class="tab-pane fade" id="base" role="tabpanel" aria-labelledby="base-tab">
+            <form action="/compareFaces" method="post">
+                <div class="form-group">
+                    <label for="valueOne">Base 64 Image encode</label>
+                    <textarea class="form-control" name="user_profile_picture" id="valueOne"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="valuetwo">Base64 Image to compare</label>
+                    <textarea class="form-control" name="user_webcam_photo" id="valuetwo"></textarea>
+                </div>
+            </form>
+            <button class="btn btn-primary" onclick="sendToCompare()">Compare</button>
+        </div>
+    </div>
+</div>
+<script type="application/javascript" src="{{ url_for('static',filename='js/jquery-3.5.1.js') }}"></script>
+<script type="application/javascript" src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+<script>
+    /**
+     * Function for compare Base64
+     */
+    function sendToCompare() {
+        var valueOne = $('#valueOne').val();
+        var valueTwo = $('#valuetwo').val();
+        if (valueOne == '') {
+            alert('First value not found');
+            return;
+        }
+        if (valueTwo == '') {
+            alert('Second value not found');
+            return;
+        }
+        var json = {
+            'user_profile_picture': valueOne,
+            'user_webcam_photo': valueTwo
+        }
+        $.ajax('/compareFaces', {
+            method: 'POST',
+            data: JSON.stringify(json),
+            contentType: 'application/json',
+            success: function (data, textStatus, xhr) {
+                alert(data);
+            },
+            error: function (request, textStatus, errorMessage) { // error callback
+                console.log(textStatus);
+                console.log(request.responseText)
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

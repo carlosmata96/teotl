@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from PIL import Image
 from base64 import b64decode
 from re import sub
@@ -12,6 +12,10 @@ log.setLevel(logging.ERROR)
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
+
+@app.route('/',methods=['GET'])
+def index():
+    return render_template('index.html')
 
 @app.route('/compareFaces', methods=['POST'])
 def compareFaces():
